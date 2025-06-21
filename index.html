@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Romi Saputra - Character Design & Digital Illustration Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional character design and digital illustration services by Romi Saputra. Specializing in anime-style artwork, game characters, and creative illustrations.">
+    <meta name="keywords" content="character design, digital illustration, anime art, game character design, freelance artist, Romi Saputra, Rosa, Banjarmasin">
+    <meta name="author" content="Romi Saputra">
+    
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Romi Saputra - Character Design & Digital Illustration Portfolio">
+    <meta property="og:description" content="Professional character design and digital illustration services by Romi Saputra. Specializing in anime-style artwork, game characters, and creative illustrations.">
+    <meta property="og:type" content="portfolio">
+    <meta property="og:url" content="https://rosromm.my.id/">
+    <meta property="og:image" content="romi.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Romi Saputra - Character Design & Digital Illustration Portfolio">
+    <meta name="twitter:description" content="Professional character design and digital illustration services by Romi Saputra. Specializing in anime-style artwork, game characters, and creative illustrations.">
+    <meta name="twitter:image" content="romi.jpg">
+     
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Heroicons -->
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/dist/heroicons.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-1: #F0F3FA;
+            --color-2: #D5DEEF;
+            --color-3: #B1C9EF;
+            --color-4: #8AAEE0;
+            --color-5: #638ECB;
+            --color-6: #395886;
+            --gradient-primary: linear-gradient(135deg, #8AAEE0, #395886);
+            --gradient-secondary: linear-gradient(45deg, #B1C9EF, #638ECB);
+        }
+        
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-1);
+            color: var(--color-6);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Responsive image handling */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Ensure mobile menu is fully responsive */
+       #mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+}
+
+#mobile-menu.active {
+    transform: translateX(0);
+}
+
+        /* Responsive grid adjustments */
+        @media (max-width: 768px) {
+            .md\:grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .md\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+                /* Enhanced Section Styles */
+        .section-gradient {
+            background: linear-gradient(135deg, #F0F3FA 0%, #D5DEEF 100%);
+        }
+
+        .skill-progress {
+            position: relative;
+            background: linear-gradient(90deg, #8AAEE0 0%, #395886 100%);
+            transition: width 1s ease-in-out;
+        }
+
+        .project-card-advanced {
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(57, 88, 134, 0.1);
+            overflow: hidden;
+        }
+
+        .project-card-advanced::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 20px 50px rgba(57, 88, 134, 0.2);
+        }
+
+        .project-card-advanced:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card-advanced:hover::after {
+            opacity: 1;
+        }
+
+        .project-overlay {
+            background: linear-gradient(to bottom, rgba(57, 88, 134, 0.1), rgba(57, 88, 134, 0.7));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .project-card-advanced:hover .project-overlay {
+          opacity: 1;
+        }
+        
+         /* New Project Section Background */
+        #portfolio {
+            background: 
+                radial-gradient(circle at top left, rgba(141, 174, 224, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at bottom right, rgba(57, 88, 134, 0.1) 0%, transparent 20%),
+                linear-gradient(to bottom, #F0F3FA, #D5DEEF);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #portfolio::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(45deg, rgba(141, 174, 224, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(141, 174, 224, 0.05) 25%, transparent 25%);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        /* Enhanced Project Cards */
+        .project-card-advanced {
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 15px 40px rgba(57, 88, 134, 0.1);
+            overflow: hidden;
+            position: relative;
+            border-radius: 1.5rem;
+            background: white;
+        }
+
+        .project-card-advanced::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 30px 60px rgba(57, 88, 134, 0.2);
+            border-radius: 1.5rem;
+        }
+
+        .project-card-advanced:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(57, 88, 134, 0.15);
+        }
+
+        .project-card-advanced:hover::after {
+            opacity: 1;
+        }
+
+        /* Enhanced Contact Section */
+        #contact {
+            background: 
+                radial-gradient(circle at top right, rgba(141, 174, 224, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at bottom left, rgba(57, 88, 134, 0.2) 0%, transparent 30%),
+                linear-gradient(to bottom right, #F0F3FA, #D5DEEF);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(135deg, rgba(57, 88, 134, 0.03) 25%, transparent 25%),
+                linear-gradient(-135deg, rgba(57, 88, 134, 0.03) 25%, transparent 25%);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        /* Glassmorphic Contact Form */
+        .contact-container {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px rgba(57, 88, 134, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Enhanced Gradients and Animations */
+        .custom-gradient {
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        
+        .card-hover {
+            transition: all 0.4s ease;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(57, 88, 134, 0.1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(57, 88, 134, 0.2);
+        }
+        
+                .project-card {
+            transition: all 0.6s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .project-card:hover {
+            transform: rotateY(20deg) translateZ(50px);
+            box-shadow: 0 20px 40px rgba(57, 88, 134, 0.2);
+        }
+        
+        .project-card-image {
+            transition: all 0.6s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .project-card:hover .project-card-image {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Parallax Background */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+        /* Glassmorphism Contact Form */
+        .glassmorphic-form {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+        }
+        
+        /* Icon Styling */
+        .icon-gradient {
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .instagram-content {
+            background: linear-gradient(135deg, #F0F3FA 0%, #D5DEEF 100%);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-[#F0F3FA]">
+    <!-- Navigation with Mobile Toggle -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg shadow-lg">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-2xl font-bold flex items-center">
+                Romi Saputra
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-[#395886] hover:text-[#8AAEE0] transition duration-300 font-semibold">Home</a>
+                <a href="#portfolio" class="text-[#395886] hover:text-[#8AAEE0] transition duration-300 font-semibold">Portfolio</a>
+                <a href="#about" class="text-[#395886] hover:text-[#8AAEE0] transition duration-300 font-semibold">About</a>
+                <a href="#contact" class="text-white bg-[#395886] px-4 py-2 rounded-full hover:bg-[#638ECB] transition duration-300">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-toggle" class="md:hidden text-[#395886]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="bg-white/95 backdrop-blur-lg z-50">
+        <div class="container mx-auto px-4 py-8 h-full flex flex-col">
+            <div class="flex justify-end mb-8">
+                <button id="mobile-menu-close" class="text-[#395886] focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-6 flex-grow justify-center items-center">
+                <a href="#home" class="text-[#395886] hover:text-[#8AAEE0] transition duration-300 font-bold text-3xl">Home</a>
+                <a href="#portfolio" class="text-[#395886] hover:text-[#8AAEE0] transition duration-300 font-bold text-3xl">Portfolio</a>
+                <a href="#about" class="text-[#395886] hover:text-[#8AAEE0] transition duration-300 font-bold text-3xl">About</a>
+                <a href="#contact" class="text-white bg-[#395886] px-8 py-4 rounded-full hover:bg-[#638ECB] transition duration-300 text-xl">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section with Wave -->
+    <header id="home" class="min-h-screen flex items-center justify-center pt-16 custom-gradient relative">
+        <div class="container mx-auto text-center px-4 z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white animate__animated animate__fadeInDown">
+                Character Design Commision
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-[#F0F3FA] animate__animated animate__fadeInUp">
+                need character drawing services?
+            </p>
+            <a href="#portfolio" class="bg-white text-[#395886] px-8 py-3 rounded-full hover:bg-[#D5DEEF] transition animate__animated animate__pulse">
+                View My Work
+            </a>
+        </div>
+        
+        <!-- Wave SVG -->
+        <div class="wave-container">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.86,32.43,512.49,53.67,579.2,72.05c89.36,23,175.79,32.76,256.49,10.94,57.26-14.42,109-52.3,158.89-62.1,52.71-10.25,103.53,10.57,154.53,42.19,40.29,24.52,81.22,58.57,124.58,55.85,52.61-3.12,94.8-45.23,119.06-87.58,33.06-59.16,10.51-129.52-36.49-177.06-71.49-75.64-180-107.28-270.61-82.64-64.2,17.48-123.09,62.18-172.74,97.48-125.56,92.34-235.3,140.4-382.21,140.4-58.74,0-114.87-8.85-172.46-29.46V0Z" opacity=".25" fill="white"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="white"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#E6EBF6"></path>
+            </svg>
+        </div>
+    </header>
+
+        <section id="about" class="py-20 section-gradient">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="animate__animated animate__fadeInLeft">
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-2xl">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-[#395886] border-b-4 border-[#8AAEE0] pb-3 md:pb-4">About My Journey</h2>
+                    <p class="text-base md:text-lg mb-4 md:mb-6 leading-relaxed text-gray-700">
+                       Holaa! I'm Romi Saputra, a student at SMKN 2 Banjarmasin and a passionate digital artist with 4–5 years of experience. I specialize in transforming imagination into visually striking illustrations full of depth and emotion. Every line and stroke I create is fueled by ambition, bringing unique and captivating visuals to life.
+I have experience in designing animated characters, game assets, and various illustrations. With my creativity, I can bring almost anything to reality through art.                    </p>
+                    <div class="space-y-4 md:space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#395886] text-sm md:text-base">Character Concept Design</span>
+                                <span class="text-[#638ECB] font-bold text-sm md:text-base">90%</span>
+                            </div>
+                            <div class="bg-[#D5DEEF] rounded-full h-2 md:h-4 overflow-hidden">
+                                <div class="skill-progress h-2 md:h-4 rounded-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#395886] text-sm md:text-base">Digital Illustration</span>
+                                <span class="text-[#638ECB] font-bold text-sm md:text-base">85%</span>
+                            </div>
+                            <div class="bg-[#D5DEEF] rounded-full h-2 md:h-4 overflow-hidden">
+                                <div class="skill-progress h-2 md:h-4 rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-[#395886] text-sm md:text-base">Animation Design</span>
+                                <span class="text-[#638ECB] font-bold text-sm md:text-base">75%</span>
+                            </div>
+                            <div class="bg-[#D5DEEF] rounded-full h-2 md:h-4 overflow-hidden">
+                                <div class="skill-progress h-2 md:h-4 rounded-full" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="animate__animated animate__fadeInRight flex justify-center mt-8 md:mt-0">
+                <div class="relative w-64 md:w-80 lg:w-96 h-64 md:h-80 lg:h-96 group">
+                    <div class="absolute inset-0 bg-[#8AAEE0] rounded-3xl transform rotate-6 group-hover:rotate-0 transition-transform duration-500 shadow-2xl"></div>
+                    <img src="romi.jpg" alt="Character Designer" class="absolute inset-0 w-full h-full object-cover rounded-3xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="bg-white p-8 rounded-2xl shadow-lg border border-[#D5DEEF]">
+  <div class="mb-8">
+    <h3 class="text-3xl font-bold text-[#395886] mb-6 pb-3 border-b-4 border-[#8AAEE0]">What I Can Draw</h3>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-[#F0F3FA] p-6 rounded-2xl shadow-md transform transition hover:scale-105 hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-3">✔</span>
+          <h4 class="text-xl font-semibold text-[#395886]">Definitely Accepted</h4>
+        </div>
+        <ul class="space-y-2 text-[#638ECB] pl-4">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Fanart
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Kemonomimi
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Original Characters (OCs)
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Ecchi
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Blood
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Horror
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Fantasy Characters
+          </li>
+        </ul>
+      </div>
+      
+      <div class="bg-[#F0F3FA] p-6 rounded-2xl shadow-md transform transition hover:scale-105 hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-3">〽️</span>
+          <h4 class="text-xl font-semibold text-[#395886]">Negotiable Styles</h4>
+        </div>
+        <ul class="space-y-2 text-[#638ECB] pl-4">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Furry
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Macha
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Old People
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Monsters/Kaiju
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Muscular Characters
+          </li>
+        </ul>
+      </div>
+      
+      <div class="bg-red-50 p-6 rounded-2xl shadow-md transform transition hover:scale-105 hover:shadow-lg">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-3">❌</span>
+          <h4 class="text-xl font-semibold text-red-700">Not Accepted</h4>
+        </div>
+        <ul class="space-y-2 text-red-600 pl-4">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+            </svg>
+            Hard NSFW 18+
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+            </svg>
+            Disturbing Art
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+            </svg>
+            Fetish Art
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+            </svg>
+            NFTs
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bg-[#D5DEEF] p-6 rounded-lg">
+    <div class="flex items-center mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-[#395886]" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+      </svg>
+      <h3 class="text-2xl font-bold text-[#395886]">Additional Information</h3>
+    </div>
+    <ul class="space-y-3 text-[#395886]">
+      <li class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+          <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+        </svg>
+        🎨 Predominantly Anime Style (Not Highly Realistic)
+      </li>
+      <li class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+        </svg>
+        👧 Stronger at Drawing Female Characters
+      </li>
+      <li class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+        </svg>
+        ⏰ Completion Time: 1 week to 1 month
+      </li>
+      <li class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+          <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+        </svg>
+        💰 Payment Terms:
+        <ul class="ml-4 pl-3 border-l-2 border-[#8AAEE0] text-[#638ECB]">
+          <li>50% upfront upon agreement</li>
+          <li>Remaining 50% after artwork completion</li>
+        </ul>
+      </li>
+      <li class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-[#8AAEE0]" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V9a1 1 0 00-1-1z" clip-rule="evenodd" />
+        </svg>
+        🔄 Maximum 3 Revisions
+      </li>
+    </ul>
+  </div>
+  
+  <div class="mt-6 text-center">
+    <a href="https://www.instagram.com/p/DHo0xGFTZ3R" target="_blank" class="bg-[#395886] text-white px-6 py-3 rounded-full hover:bg-[#638ECB] transition duration-300 inline-flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+      View Instagram Portfolio
+    </a>
+  </div>
+</div>
+<!-- Enhanced Project Showcase -->
+    <section id="portfolio" class="py-20 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl font-bold text-center mb-16 text-[#395886] relative z-10">Creative Projects</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="project-card-advanced relative">
+                    <div class="relative overflow-hidden">
+                        <img src="img1.jpg" alt="Animation Characters" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#395886] opacity-70"></div>
+                        <div class="absolute inset-0 flex items-end p-6 text-white">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Animation Characters</h3>
+                                <p class="text-sm opacity-80">Crafting unique characters that breathe life into animated stories.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="img1.jpg" class="block text-center bg-[#395886] text-white py-3 rounded-full hover:bg-[#638ECB] transition duration-300">
+                            Explore Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Similar modifications for other project cards -->
+                <div class="project-card-advanced relative">
+                    <div class="relative overflow-hidden">
+                        <img src="img2.jpg" alt="Game Design" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#395886] opacity-70"></div>
+                        <div class="absolute inset-0 flex items-end p-6 text-white">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Game Design</h3>
+                                <p class="text-sm opacity-80">Designing characters that define gaming experiences and narratives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="img2.jpg" class="block text-center bg-[#395886] text-white py-3 rounded-full hover:bg-[#638ECB] transition duration-300">
+                            Explore Project
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card-advanced relative">
+                    <div class="relative overflow-hidden">
+                        <img src="img3.jpg" alt="Illustration" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#395886] opacity-70"></div>
+                        <div class="absolute inset-0 flex items-end p-6 text-white">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Illustration</h3>
+                                <p class="text-sm opacity-80">Creating detailed character illustrations that tell compelling visual stories.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="img3.jpg" class="block text-center bg-[#395886] text-white py-3 rounded-full hover:bg-[#638ECB] transition duration-300">
+                            Explore Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl mx-auto contact-container overflow-hidden">
+                <div class="p-8 bg-[#395886] text-white text-center">
+                    <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+                    <p class="text-lg mb-6 text-[#B1C9EF]">Have a project in mind? Let's collaborate and bring your character to life!</p>
+                </div>
+                <form class="p-8 space-y-6 bg-white/50">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-[#395886] font-semibold">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-[#D5DEEF] focus:outline-none focus:ring-2 focus:ring-[#8AAEE0]" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-[#395886] font-semibold">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-[#D5DEEF] focus:outline-none focus:ring-2 focus:ring-[#8AAEE0]" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-[#395886] font-semibold">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-[#D5DEEF] focus:outline-none focus:ring-2 focus:ring-[#8AAEE0]" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-[#395886] to-[#638ECB] text-white py-3 rounded-full hover:from-[#638ECB] hover:to-[#395886] transition duration-300 transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Gradient -->
+    <footer class="bg-gradient-to-r from-[#395886] to-[#638ECB] text-white py-8">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-[#B1C9EF] transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Instagram
+                </a>
+                <a href="#" class="hover:text-[#B1C9EF] transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.672c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                    </svg>
+                    Facebook
+                </a>
+                <a href="#" class="hover:text-[#B1C9EF] transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+            <p>&copy; 2025</p>
+        </div>
+    </footer>
+
+   <script>
+    // Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileMenu = document.getElementById('mobile-menu');
+
+// Open mobile menu
+mobileMenuToggle.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+// Close mobile menu
+mobileMenuClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+// Close mobile menu when a link is clicked
+const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        
+        // Event listener for scroll
+        window.addEventListener("scroll", reveal);
+        
+        // Initial reveal on page load
+        reveal();
+    </script>
+</body>
+</html>
